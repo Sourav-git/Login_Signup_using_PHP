@@ -27,7 +27,7 @@
                             <img id = "dp" src="https://cdn1.iconfinder.com/data/icons/avatars-1/90/10-512.png" height = "200px" width = "200px" style = "border-radius: 50%; margin-bottom: 2%">
                         </div>
                         <input type="file" name = "p_pic" id = "file_btn" tabindex="8" hidden>
-                        <input type = "button" class="btn btn-success" onClick="$('#file_btn').click();" value = "Upload Picture">
+                        <button class="btn btn-success" onClick="$('#file_btn').click();">Upload Picture</button>
                     </div>
                 </div>
                 <br>
@@ -78,7 +78,7 @@
                                 <a href="#" onClick="$('#reg_div').hide(); $('#login_div').fadeIn();">login Here</a>
                             </div>
                         </div> 
-                </div>
+                    </div>
                 </form>
             </div>
         </div>
@@ -93,20 +93,27 @@
                     <h3 class="panel-title"><strong>Login</strong></h3>
                     <div class="ball" style = "padding : 10px; border : 1px solid rgba(0, 0, 0, 0.15); border-radius: 7px 7px 7px 7px">
                         <div class="user-photo-mask">
-                            <img id = "dp" src="https://cdn1.iconfinder.com/data/icons/avatars-1/90/10-512.png" height = "200px" width = "200px" style = "border-radius: 50%; margin-bottom: 2%">
+                            <img id = "dp2" src="https://cdn1.iconfinder.com/data/icons/avatars-1/90/10-512.png" height = "200px" width = "200px" style = "border-radius: 50%; margin-bottom: 2%">
                         </div>
                     </div>
                 </div>
                 <br>
                 <div id = "login_alert" class="alert alert-danger" style="display: none">Fill all the (*) marked fields!</div>
                 <div class="panel-body">
-                    <form role="form" method="POST" name = "login_form" onsubmit="return login_form_validate()" autocomplete="off">
+                    <form role="form" method="POST" id = "login_form1" name = "login_form1" onsubmit="return login_form_validate()" autocomplete="off">
                         <div class="form-group">
                             <input type="email" name="login_email" id="login_email" class="form-control " placeholder="Email Address*" tabindex="1">
-                            <input type="password" style = "display: none" name="login_password" id="login_password" class="form-control " placeholder="Password*" tabindex="2">
                         </div>
-                        <button type="submit" class="btn btn-success">Sign in</button>
+                        <button class="btn btn-success">Sign in</button>
                         <button type="reset" class="btn btn-info">Reset</button>
+                    </form>
+                    <form role="form" method="POST" id = "login_form2" name = "login_form2" onsubmit="return login_form_validate2()" autocomplete="off" style = "display:none">
+                        <div class="form-group">
+                            <input type="password" name="login_password" id="login_password" class="form-control " placeholder="Password*" tabindex="1">
+                        </div>
+                        <button class="btn btn-success">Sign in</button>
+                        <button type="reset" class="btn btn-info">Reset</button>
+                    </form>
                         <hr style="margin-top:10px;margin-bottom:10px;" >
                         <div class="form-group">
                             <div style="font-size:85%">
@@ -117,16 +124,15 @@
                             <div style="font-size:85%">
                                 Login using social account
                                 <p>
-                                    <!-- <a onclick = "login()" class="btn btn-primary social-login-btn social-facebook" href=""><i class="fa fa-facebook"></i></a> -->
-                                    <button onclick="login()" class="btn btn-primary social-login-btn social-facebook"><i class="fa fa-facebook"></i></button>
+                                    <a onclick = "login()" class="btn btn-primary social-login-btn social-facebook" href=""><i class="fa fa-facebook"></i></a>
                                     <a class="btn btn-primary social-login-btn social-twitter" href="/auth/twitter"><i class="fa fa-twitter"></i></a>
                                     <a class="btn btn-primary social-login-btn social-linkedin" href="/auth/linkedin"><i class="fa fa-linkedin"></i></a>
                                     <a class="btn btn-primary social-login-btn social-google" href="/auth/google"><i class="fa fa-google-plus"></i></a>
                                 </p>
-                                <div id="status"></div>
+                                <!-- <div id="status"></div>
                                 <button onclick="getInfo()">Get Info</button>
                                 <button onclick="login()">login</button>
-                                <button onclick="logout()">logout</button>
+                                <button onclick="logout()">logout</button> -->
                             </div>
                         </div> 
                     </form>
